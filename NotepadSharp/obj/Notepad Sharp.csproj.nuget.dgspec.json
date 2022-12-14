@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\kyran\\source\\repos\\NotepadSharp\\NotepadSharp\\Notepad Sharp.csproj": {}
+    "C:\\Users\\kyran\\Documents\\GitHub\\Notepad-Sharp\\NotepadSharp\\Notepad Sharp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\kyran\\source\\repos\\NotepadSharp\\NotepadSharp\\Notepad Sharp.csproj": {
-      "version": "1.0.0",
+    "C:\\Users\\kyran\\Documents\\GitHub\\Notepad-Sharp\\NotepadSharp\\Notepad Sharp.csproj": {
+      "version": "0.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\kyran\\source\\repos\\NotepadSharp\\NotepadSharp\\Notepad Sharp.csproj",
+        "projectUniqueName": "C:\\Users\\kyran\\Documents\\GitHub\\Notepad-Sharp\\NotepadSharp\\Notepad Sharp.csproj",
         "projectName": "Notepad Sharp",
-        "projectPath": "C:\\Users\\kyran\\source\\repos\\NotepadSharp\\NotepadSharp\\Notepad Sharp.csproj",
+        "projectPath": "C:\\Users\\kyran\\Documents\\GitHub\\Notepad-Sharp\\NotepadSharp\\Notepad Sharp.csproj",
         "packagesPath": "C:\\Users\\kyran\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\kyran\\source\\repos\\NotepadSharp\\NotepadSharp\\obj\\",
+        "outputPath": "C:\\Users\\kyran\\Documents\\GitHub\\Notepad-Sharp\\NotepadSharp\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",

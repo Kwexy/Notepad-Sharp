@@ -19,3 +19,25 @@ C:\Users\kyran\source\repos\NotepadSharp\NotepadSharp\obj\Debug\net5.0-windows\N
 C:\Users\kyran\source\repos\NotepadSharp\NotepadSharp\obj\Debug\net5.0-windows\ref\Notepad Sharp.dll
 C:\Users\kyran\source\repos\NotepadSharp\NotepadSharp\obj\Debug\net5.0-windows\Notepad Sharp.pdb
 C:\Users\kyran\source\repos\NotepadSharp\NotepadSharp\obj\Debug\net5.0-windows\Notepad Sharp.genruntimeconfig.cache
+C:\Users\kyran\Documents\GitHub\Notepad-Sharp\NotepadSharp\bin\Debug\net5.0-windows\Notepad Sharp.exe
+C:\Users\kyran\Documents\GitHub\Notepad-Sharp\NotepadSharp\bin\Debug\net5.0-windows\Notepad Sharp.deps.json
+C:\Users\kyran\Documents\GitHub\Notepad-Sharp\NotepadSharp\bin\Debug\net5.0-windows\Notepad Sharp.runtimeconfig.json
+C:\Users\kyran\Documents\GitHub\Notepad-Sharp\NotepadSharp\bin\Debug\net5.0-windows\Notepad Sharp.runtimeconfig.dev.json
+C:\Users\kyran\Documents\GitHub\Notepad-Sharp\NotepadSharp\bin\Debug\net5.0-windows\Notepad Sharp.dll
+C:\Users\kyran\Documents\GitHub\Notepad-Sharp\NotepadSharp\bin\Debug\net5.0-windows\ref\Notepad Sharp.dll
+C:\Users\kyran\Documents\GitHub\Notepad-Sharp\NotepadSharp\bin\Debug\net5.0-windows\Notepad Sharp.pdb
+C:\Users\kyran\Documents\GitHub\Notepad-Sharp\NotepadSharp\obj\Debug\net5.0-windows\Notepad Sharp.csproj.AssemblyReference.cache
+C:\Users\kyran\Documents\GitHub\Notepad-Sharp\NotepadSharp\obj\Debug\net5.0-windows\MainWindow.g.cs
+C:\Users\kyran\Documents\GitHub\Notepad-Sharp\NotepadSharp\obj\Debug\net5.0-windows\App.g.cs
+C:\Users\kyran\Documents\GitHub\Notepad-Sharp\NotepadSharp\obj\Debug\net5.0-windows\Notepad Sharp_MarkupCompile.cache
+C:\Users\kyran\Documents\GitHub\Notepad-Sharp\NotepadSharp\obj\Debug\net5.0-windows\Notepad Sharp_MarkupCompile.lref
+C:\Users\kyran\Documents\GitHub\Notepad-Sharp\NotepadSharp\obj\Debug\net5.0-windows\MainWindow.baml
+C:\Users\kyran\Documents\GitHub\Notepad-Sharp\NotepadSharp\obj\Debug\net5.0-windows\Notepad Sharp.g.resources
+C:\Users\kyran\Documents\GitHub\Notepad-Sharp\NotepadSharp\obj\Debug\net5.0-windows\Notepad Sharp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\kyran\Documents\GitHub\Notepad-Sharp\NotepadSharp\obj\Debug\net5.0-windows\Notepad Sharp.AssemblyInfoInputs.cache
+C:\Users\kyran\Documents\GitHub\Notepad-Sharp\NotepadSharp\obj\Debug\net5.0-windows\Notepad Sharp.AssemblyInfo.cs
+C:\Users\kyran\Documents\GitHub\Notepad-Sharp\NotepadSharp\obj\Debug\net5.0-windows\Notepad Sharp.csproj.CoreCompileInputs.cache
+C:\Users\kyran\Documents\GitHub\Notepad-Sharp\NotepadSharp\obj\Debug\net5.0-windows\Notepad Sharp.dll
+C:\Users\kyran\Documents\GitHub\Notepad-Sharp\NotepadSharp\obj\Debug\net5.0-windows\ref\Notepad Sharp.dll
+C:\Users\kyran\Documents\GitHub\Notepad-Sharp\NotepadSharp\obj\Debug\net5.0-windows\Notepad Sharp.pdb
+C:\Users\kyran\Documents\GitHub\Notepad-Sharp\NotepadSharp\obj\Debug\net5.0-windows\Notepad Sharp.genruntimeconfig.cache

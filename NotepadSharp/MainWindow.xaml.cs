@@ -29,9 +29,7 @@ namespace NotepadSharp {
         public void New(object sender, EventArgs e) {
             string messageBoxText = "Would you like to save before opening a new file?";
             string caption = "Save First?";
-            MessageBoxButton mb = MessageBoxButton.YesNo;
-            MessageBoxImage img = MessageBoxImage.Warning;
-            MessageBoxResult result = MessageBox.Show(messageBoxText, caption, mb, img);
+            /*MessageBoxResult result = */MessageBox.Show(messageBoxText, caption, MessageBoxButton.YesNo, MessageBoxImage.Warning);
         }
 
         public void Button_Open(object sender, EventArgs e) {

@@ -1,20 +1,20 @@
 ﻿Notepad Sharp
-1.0.0.0
+0.0.0.0
 
 winexe
 C#
 .cs
-C:\Users\kyran\source\repos\NotepadSharp\NotepadSharp\obj\Debug\net5.0-windows\
+C:\Users\kyran\Documents\GitHub\Notepad-Sharp\NotepadSharp\obj\Debug\net5.0-windows\
 Notepad_Sharp
 none
 false
 TRACE;DEBUG;NET;NET5_0;NETCOREAPP
-C:\Users\kyran\source\repos\NotepadSharp\NotepadSharp\App.xaml
+C:\Users\kyran\Documents\GitHub\Notepad-Sharp\NotepadSharp\App.xaml
 11407045341
 
 6474632947
 193-1891726104
 MainWindow.xaml;
 
-True
+False
 

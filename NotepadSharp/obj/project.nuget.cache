@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "T5JJhBz3ZLQfhFcxlvkQDpFTzJtkK3gUnJVT6ng0d3BbVslrajTIhoBTnZyFBuiWnoXpe2VsqOCteuazN7DHWg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\kyran\\source\\repos\\NotepadSharp\\NotepadSharp\\Notepad Sharp.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\kyran\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\5.0.13\\microsoft.netcore.app.host.win-x64.5.0.13.nupkg.sha512"
+  ],
+  "logs": []
+}

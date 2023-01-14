@@ -29,54 +29,91 @@ namespace NotepadSharp {
         public void New(object sender, EventArgs e) {
             string messageBoxText = "Would you like to save before opening a new file?";
             string caption = "Save First?";
-            /*MessageBoxResult result = */MessageBox.Show(messageBoxText, caption, MessageBoxButton.YesNo, MessageBoxImage.Warning);
+            MessageBox.Show(messageBoxText, caption, MessageBoxButton.YesNo, MessageBoxImage.Warning);
         }
 
         public void Button_Open(object sender, EventArgs e) {
             OpenFileDialog openFileWindow = new OpenFileDialog();
             openFileWindow.ShowDialog();
-            KwextBox.Text = "";
-            foreach (string line in FileManager.ReadFile(openFileWindow.FileName)) {
-                KwextBox.Text += line + "\n";
+            if (openFileWindow.FileName != "") {
+                TextBox.Text = "";
+                foreach (string line in FileManager.ReadFile(openFileWindow.FileName)) {
+                    TextBox.Text += line + "\n";
+                }
             }
+            //TextBlock_FileName.Text = openFileWindow.FileName;
+            UpdateFileNameText(openFileWindow.FileName);
         }
 
         public void Button_Save(object sender, EventArgs e) { 
-            FileManager.WriteFile(FileManager.WorkingPath, KwextBox.Text);
+            FileManager.WriteFile(FileManager.WorkingPath, TextBox.Text);
+            //TextBlock_FileName.Text = FileManager.WorkingPath;
+            UpdateFileNameText(FileManager.WorkingPath);
+            TextBlock_Saved.Foreground = Brushes.Green;
+            TextBlock_Saved.Text = "Saved!";
         }
 
         public void Button_SaveAs(object sender, EventArgs e) {
             SaveFileDialog saveFileWindow = new SaveFileDialog();
             saveFileWindow.ShowDialog();
-            FileManager.WriteFile(saveFileWindow.FileName, KwextBox.Text);
+            FileManager.WriteFile(saveFileWindow.FileName, TextBox.Text);
+            //TextBlock_FileName.Text = FileManager.WorkingPath;
+            UpdateFileNameText(FileManager.WorkingPath);
+            TextBlock_Saved.Foreground = Brushes.Green;
+            TextBlock_Saved.Text = "Saved!";
         }
 
         public void Button_Exit(object sender, EventArgs e) {
             Application.Current.Shutdown();
         }
 
-        private void KwextBox_ZoomIn(object sender, RoutedEventArgs e) {
-            if (KwextBox.FontSize < 30) {
-                KwextBox.FontSize++;
+        public void UpdateFileNameText(string filePath) {
+            for (int i = filePath.Length-1; i >= 0; i--) {
+                if (filePath[i] == '\\') {
+                    TextBlock_FileName.Text = filePath.Substring(i+1);
+                    return;
+                }
             }
         }
 
-        private void KwextBox_ZoomOut(object sender, RoutedEventArgs e) {
-            if (KwextBox.FontSize > 1) {
-                KwextBox.FontSize--;
+        private void TextBox_ZoomIn(object sender, RoutedEventArgs e) {
+            if (TextBox.FontSize < 30) {
+                TextBox.FontSize++;
+            }
+        }
+
+        private void TextBox_ZoomOut(object sender, RoutedEventArgs e) {
+            if (TextBox.FontSize > 1) {
+                TextBox.FontSize--;
             }
         }
 
         private void Slider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e) {
             double percAmount = ScaleSlider.Value * 10;
-            ScaleText.Text = ((int)percAmount).ToString() + "%";
+            ScaleText.Text = ((int)percAmount).ToString();
             if (ScaleSlider.Value > 0) {
-                KwextBox.FontSize = ScaleSlider.Value * 10;
+                TextBox.FontSize = ScaleSlider.Value * 10;
             }
         }
 
-        private void KwextBox_TextChanged(object sender, TextChangedEventArgs e) {
-            //TextBlock_LineNumber.Text = KwextBox.
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e) {
+            TextBlock_Saved.Foreground = Brushes.Red;
+            TextBlock_Saved.Text = "Unsaved";
+        }
+
+        private void TextBox_SelectionChanged(object sender, RoutedEventArgs e) {
+            int lines = 0;
+            int columns = 0;
+
+            for (int i = 0; i < TextBox.CaretIndex; i++) {
+                columns++;
+                if (TextBox.Text[i] == '\n') {
+                    lines++;
+                    columns = 0;
+                }
+            }
+            TextBlock_LineNumber.Text = lines.ToString();
+            TextBlock_ColumnNumber.Text = columns.ToString();
         }
     }
 }

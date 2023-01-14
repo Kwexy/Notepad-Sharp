@@ -1,37 +1,50 @@
 ﻿<Window x:Class="NotepadSharp.MainWindow"
+        xmlns:ui="http://schemas.modernwpf.com/2019"
+        ui:WindowHelper.UseModernWindowStyle="True"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:KwextEditor"
+        xmlns:local="clr-namespace:NotepadSharp"
         mc:Ignorable="d"
-        Title="Kwext Editor" Height="450" Width="800" Background="#272725" WindowStyle="ThreeDBorderWindow">
+        Title="Notepad Sharp" Height="450" Width="800" Background="#272725" WindowStyle="None" AllowsTransparency="True" Opacity="0.98">
+
 
     <Window.Resources>
 
-        <Style x:Key="MenuItemStyle" TargetType="MenuItem">
+        <Style x:Key="MenuStyle" TargetType="Menu" BasedOn="{StaticResource {x:Type Menu}}">
             <Setter Property="Background" Value="#FF272725"></Setter>
             <Setter Property="Foreground" Value="White"></Setter>
+            <Setter Property="FontSize" Value="15"></Setter>
+            <Setter Property="BorderThickness" Value="0"></Setter>
+            <Setter Property="BorderBrush" Value="#FF272725"></Setter>
+        </Style>
+
+        <Style x:Key="MenuItemStyle" TargetType="MenuItem" BasedOn="{StaticResource {x:Type MenuItem}}">
+            <Setter Property="Background" Value="#FF272725"></Setter>
+            <Setter Property="Foreground" Value="White"></Setter>
+            <Setter Property="FontSize" Value="15"></Setter>
             <Setter Property="IsCheckable" Value="False"></Setter>
             <Setter Property="BorderThickness" Value="0"></Setter>
+            <Setter Property="BorderBrush" Value="#FF272725"></Setter>
         </Style>
 
     </Window.Resources>
 
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="18px"/>
+            <RowDefinition Height="40"/>
             <RowDefinition/>
-            <RowDefinition Height="17px"/>
+            <RowDefinition Height="20"/>
         </Grid.RowDefinitions>
 
-        <Menu VerticalAlignment="Center" Background="#FF272725" Foreground="White" Grid.ColumnSpan="1" Height="16">
-            <MenuItem Header="File" Style="{StaticResource MenuItemStyle}">
-                <MenuItem Header="New" Style="{StaticResource MenuItemStyle}" Click="New"/>
+        <Menu VerticalAlignment="Center" Style="{StaticResource MenuStyle}" Background="#FF272725" Foreground="White" BorderBrush="#FF272725" BorderThickness="0" Grid.ColumnSpan="1" Height="40">
+            <MenuItem Header="File" Style="{StaticResource MenuItemStyle}" BorderBrush="#FF272725" BorderThickness="0">
+                <MenuItem Header="New" Style="{StaticResource MenuItemStyle}" Click="New" BorderBrush="#FF272725" BorderThickness="0" />
                 <MenuItem Header="Open..." Style="{StaticResource MenuItemStyle}" Click="Button_Open"/>
                 <Separator/>
                 <MenuItem Header="Save" Style="{StaticResource MenuItemStyle}" Click="Button_Save"/>
@@ -41,28 +54,38 @@
             </MenuItem>
         </Menu>
 
-
-
-        <TextBox Name="KwextBox" Background="#171715" Foreground="White" TextChanged="KwextBox_TextChanged" AcceptsReturn="True" AcceptsTab="True" Grid.RowSpan="1" Grid.ColumnSpan="2" Grid.Row="1">
+        <TextBox Name="TextBox" Grid.Row="1" Grid.RowSpan="1" Grid.ColumnSpan="2" Background="#171715" Foreground="White" BorderThickness="0" TextChanged="TextBox_TextChanged" SelectionChanged="TextBox_SelectionChanged" AcceptsReturn="True" AcceptsTab="True">
             <TextBox.ContextMenu>
                 <ContextMenu>
-                    <MenuItem Header="Zoom In" Click="KwextBox_ZoomIn"></MenuItem>
-                    <MenuItem Header="Zoom Out" Click="KwextBox_ZoomOut"></MenuItem>
+                    <MenuItem Header="Zoom In" Click="TextBox_ZoomIn"></MenuItem>
+                    <MenuItem Header="Zoom Out" Click="TextBox_ZoomOut"></MenuItem>
                 </ContextMenu>
             </TextBox.ContextMenu>
         </TextBox>
 
-        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right" TextBlock.Foreground="White" Grid.Column="1" Margin="0,0,0,0" Grid.RowSpan="2" Width="126">
-            <TextBlock Name="TextBlock_LineNumber" Margin="10, 0, 10, 0">0</TextBlock>
-            <Separator/>
-            <TextBlock Name="TextBlock_Scale" Margin="10, 0, 10, 0">0</TextBlock>
-            <Separator/>
-            <TextBlock Name="TextBlock_Saved" Margin="10, 0, 10, 0">0</TextBlock>
+        <StackPanel Grid.Column="0" Grid.Row="2" Height="20" Orientation="Horizontal" VerticalAlignment="Center" TextBlock.Foreground="White" HorizontalAlignment="Left">
+            <TextBlock Name="TextBlock_FileName" Margin="5,0,0,0">Untitled</TextBlock>
         </StackPanel>
 
-        <StackPanel Grid.Column="2" Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Right">
-            <TextBlock Name="ScaleText" Foreground="White"></TextBlock>
-            <Slider Name="ScaleSlider" ToolTip="Change Scale of Text" Width="100" Value="1.25" ValueChanged="Slider_ValueChanged"></Slider>
+
+        <StackPanel Grid.Column="1" Grid.Row="2" Height="20" Orientation="Horizontal" VerticalAlignment="Center" TextBlock.Foreground="White" HorizontalAlignment="Stretch">
+
+            <Border Width="1" Background="#373735"></Border>
+            
+            <TextBlock Name="TextBlock_Line" Margin="10, 0, 0, 0">Line:</TextBlock>
+            <TextBlock Name="TextBlock_LineNumber" Margin="5, 0, 10, 0">0</TextBlock>
+            <Separator/>
+            <TextBlock Name="TextBlock_Column" Margin="0, 0, 0, 0">Column:</TextBlock>
+            <TextBlock Name="TextBlock_ColumnNumber" Margin="5, 0, 10, 0">0</TextBlock>
+
+            <Border Width="1" Background="#373735"></Border>
+
+            <TextBlock Name="TextBlock_Saved" Margin="10, 0, 0, 0" Foreground="Red">Unsaved</TextBlock>
+        </StackPanel>
+
+        <StackPanel Grid.Column="1" Grid.Row="0" Margin="0,0,10,0" Orientation="Horizontal" HorizontalAlignment="Right" Width="140">
+            <TextBlock x:Name="ScaleText" TextAlignment="Center" Margin="0,10,0,0" Width="40" Foreground="White"/>
+            <Slider x:Name="ScaleSlider" Cursor="Hand" Width="100" Height="30" ToolTip="Change Scale of Text" Value="1.25" Foreground="White" Background="Gray"  ValueChanged="Slider_ValueChanged"/>
         </StackPanel>
 
     </Grid>

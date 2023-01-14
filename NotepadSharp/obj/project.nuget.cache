@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "lhNGU3M4BEx1Sr/B8gnaiyJg35V1pICVnnOuo1GGkC5U5nNpMtfwNHLO1yb94sP5Ld2vN4LhJnVo4jk2Sd3Ajw==",
+  "dgSpecHash": "N5IzX+/+bflGhZK33wUxnMLrbwC6FaYeFjYmLSSZMtRNaBnLOe9nulolplRpvYjfmHNCrHz27Ll0LmkKye1nPg==",
   "success": true,
   "projectFilePath": "C:\\Users\\kyran\\Documents\\GitHub\\Notepad-Sharp\\NotepadSharp\\Notepad Sharp.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\kyran\\.nuget\\packages\\modernwpfui\\0.9.6\\modernwpfui.0.9.6.nupkg.sha512",
     "C:\\Users\\kyran\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\5.0.13\\microsoft.netcore.app.host.win-x64.5.0.13.nupkg.sha512"
   ],
   "logs": []

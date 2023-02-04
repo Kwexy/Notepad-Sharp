@@ -26,7 +26,6 @@ C:\Users\kyran\Documents\GitHub\Notepad-Sharp\NotepadSharp\bin\Debug\net5.0-wind
 C:\Users\kyran\Documents\GitHub\Notepad-Sharp\NotepadSharp\bin\Debug\net5.0-windows\Notepad Sharp.dll
 C:\Users\kyran\Documents\GitHub\Notepad-Sharp\NotepadSharp\bin\Debug\net5.0-windows\ref\Notepad Sharp.dll
 C:\Users\kyran\Documents\GitHub\Notepad-Sharp\NotepadSharp\bin\Debug\net5.0-windows\Notepad Sharp.pdb
-C:\Users\kyran\Documents\GitHub\Notepad-Sharp\NotepadSharp\obj\Debug\net5.0-windows\Notepad Sharp.csproj.AssemblyReference.cache
 C:\Users\kyran\Documents\GitHub\Notepad-Sharp\NotepadSharp\obj\Debug\net5.0-windows\MainWindow.g.cs
 C:\Users\kyran\Documents\GitHub\Notepad-Sharp\NotepadSharp\obj\Debug\net5.0-windows\App.g.cs
 C:\Users\kyran\Documents\GitHub\Notepad-Sharp\NotepadSharp\obj\Debug\net5.0-windows\Notepad Sharp_MarkupCompile.cache

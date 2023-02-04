@@ -14,4 +14,4 @@ So I decided to write a modern plain text editor for Windows.
 <br>
 Notepad although simple is very useful.
 So I wanted to make something easy to use and appealing to all types of users.
-<img src="<img src="https://github.com/Kwexy/Notepad-Sharp/blob/dev/NotepadSharp/Images/Desktop%20Capture.JPG?raw=true" width="700">
+<img src="https://github.com/Kwexy/Notepad-Sharp/blob/dev/NotepadSharp/Images/Desktop%20Capture.JPG?raw=true" width="500">

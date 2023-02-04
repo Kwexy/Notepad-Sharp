@@ -1,4 +1,4 @@
-<img src="https://github.com/Kwexy/Notepad-Sharp/blob/main/NotepadSharp/Images/Banner.png?raw=true" width="700">
+<img src="https://github.com/Kwexy/Notepad-Sharp/blob/dev/NotepadSharp/Images/Banner.png?raw=true" width="700">
 
 ---
 

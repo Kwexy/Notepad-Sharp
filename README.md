@@ -3,3 +3,7 @@
 ---
 
 A sharp looking plain text editor written in C#.
+
+### About Notepad Sharp
+
+I decided to write a basic, modern plain text editor for Windows.

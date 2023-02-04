@@ -45,12 +45,16 @@ namespace NotepadSharp {
             UpdateFileNameText(openFileWindow.FileName);
         }
 
-        public void Button_Save(object sender, EventArgs e) { 
-            FileManager.WriteFile(FileManager.WorkingPath, TextBox.Text);
-            //TextBlock_FileName.Text = FileManager.WorkingPath;
-            UpdateFileNameText(FileManager.WorkingPath);
-            TextBlock_Saved.Foreground = Brushes.Green;
-            TextBlock_Saved.Text = "Saved!";
+        public void Button_Save(object sender, EventArgs e) {
+            if (FileManager.WorkingPath != null) {
+                FileManager.WriteFile(FileManager.WorkingPath, TextBox.Text);
+                //TextBlock_FileName.Text = FileManager.WorkingPath;
+                UpdateFileNameText(FileManager.WorkingPath);
+                TextBlock_Saved.Foreground = Brushes.Green;
+                TextBlock_Saved.Text = "Saved!";
+            } else {
+                Button_SaveAs(sender, e);
+            }
         }
 
         public void Button_SaveAs(object sender, EventArgs e) {
@@ -92,7 +96,7 @@ namespace NotepadSharp {
             double percAmount = ScaleSlider.Value * 10;
             ScaleText.Text = ((int)percAmount).ToString();
             if (ScaleSlider.Value > 0) {
-                TextBox.FontSize = ScaleSlider.Value * 10;
+                TextBox.FontSize = Math.Ceiling(percAmount);
             }
         }
 

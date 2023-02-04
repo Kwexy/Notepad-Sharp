@@ -7,15 +7,98 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:NotepadSharp"
         mc:Ignorable="d"
-        Title="Notepad Sharp" Height="450" Width="800" Background="#272725" WindowStyle="None" AllowsTransparency="True" Opacity="0.98">
+        Title="Notepad Sharp" Height="450" Width="800" WindowStyle="None" AllowsTransparency="True" Opacity="0.90" Icon="/Logo.png">
+    
+    
+    <Window.Background>
+        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="#FF272725"/>
+            <GradientStop Color="#FF383838" Offset="1"/>
+        </LinearGradientBrush>
+    </Window.Background>
 
 
     <Window.Resources>
 
+        <Style TargetType="{x:Type TextBox}">
+            <Setter Property="Background" Value="#00000000"></Setter>
+            <Setter Property="Foreground" Value="White"></Setter>
+            <Setter Property="FontSize" Value="12"></Setter>
+            <Setter Property="IsEnabled" Value="True"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type TextBox}">
+                        <ScrollViewer x:Name="PART_ContentHost" Focusable="True">
+
+                        </ScrollViewer>
+                        <ControlTemplate.Triggers>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="ThumbButtonStyle" TargetType="Rectangle">
+            <Setter Property="Fill" Value="White"/>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Trigger.Setters>
+                        <Setter Property="Fill" Value="DarkGray"/>
+                    </Trigger.Setters>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+        <Style x:Key="RepeatButtonStyle" TargetType="{x:Type RepeatButton}">
+            <Setter Property="OverridesDefaultStyle" Value="True"/>
+            <Setter Property="Height" Value="3"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type RepeatButton}">
+                        <Rectangle Fill="#ff1f1f1f"></Rectangle>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="ThumbStyle" TargetType="{x:Type Thumb}">
+            <Setter Property="OverridesDefaultStyle" Value="True"/>
+            <Setter Property="SnapsToDevicePixels" Value="True"/>
+            <Setter Property="Width" Value="10"/>
+            <Setter Property="Height" Value="15"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Thumb}">
+                        <Rectangle Style="{StaticResource ThumbButtonStyle}"></Rectangle>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style TargetType="Slider">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <Track Height="15" x:Name="PART_Track">
+                            <Track.DecreaseRepeatButton>
+                                <RepeatButton Style="{StaticResource RepeatButtonStyle}" Command="Slider.DecreaseLarge" Width="Auto"/>
+                            </Track.DecreaseRepeatButton>
+                            <Track.Thumb>
+                                <Thumb Style="{StaticResource ThumbStyle}" Width="10" Height="15"/>
+                            </Track.Thumb>
+                            <Track.IncreaseRepeatButton>
+                                <RepeatButton Style="{StaticResource RepeatButtonStyle}" Command="Slider.IncreaseLarge" Width="Auto"/>
+                            </Track.IncreaseRepeatButton>
+                        </Track>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
         <Style x:Key="MenuStyle" TargetType="Menu" BasedOn="{StaticResource {x:Type Menu}}">
             <Setter Property="Background" Value="#FF272725"></Setter>
             <Setter Property="Foreground" Value="White"></Setter>
-            <Setter Property="FontSize" Value="15"></Setter>
+            <Setter Property="FontSize" Value="11"></Setter>
             <Setter Property="BorderThickness" Value="0"></Setter>
             <Setter Property="BorderBrush" Value="#FF272725"></Setter>
         </Style>
@@ -23,7 +106,7 @@
         <Style x:Key="MenuItemStyle" TargetType="MenuItem" BasedOn="{StaticResource {x:Type MenuItem}}">
             <Setter Property="Background" Value="#FF272725"></Setter>
             <Setter Property="Foreground" Value="White"></Setter>
-            <Setter Property="FontSize" Value="15"></Setter>
+            <Setter Property="FontSize" Value="12"></Setter>
             <Setter Property="IsCheckable" Value="False"></Setter>
             <Setter Property="BorderThickness" Value="0"></Setter>
             <Setter Property="BorderBrush" Value="#FF272725"></Setter>
@@ -37,12 +120,12 @@
             <ColumnDefinition Width="1*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="40"/>
+            <RowDefinition Height="30"/>
             <RowDefinition/>
             <RowDefinition Height="20"/>
         </Grid.RowDefinitions>
 
-        <Menu VerticalAlignment="Center" Style="{StaticResource MenuStyle}" Background="#FF272725" Foreground="White" BorderBrush="#FF272725" BorderThickness="0" Grid.ColumnSpan="1" Height="40">
+        <Menu VerticalAlignment="Center" Style="{StaticResource MenuStyle}" Background="#00000000" Foreground="White" BorderBrush="#FF272725" BorderThickness="0" Grid.ColumnSpan="1" Height="40">
             <MenuItem Header="File" Style="{StaticResource MenuItemStyle}" BorderBrush="#FF272725" BorderThickness="0">
                 <MenuItem Header="New" Style="{StaticResource MenuItemStyle}" Click="New" BorderBrush="#FF272725" BorderThickness="0" />
                 <MenuItem Header="Open..." Style="{StaticResource MenuItemStyle}" Click="Button_Open"/>
@@ -54,7 +137,7 @@
             </MenuItem>
         </Menu>
 
-        <TextBox Name="TextBox" Grid.Row="1" Grid.RowSpan="1" Grid.ColumnSpan="2" Background="#171715" Foreground="White" BorderThickness="0" TextChanged="TextBox_TextChanged" SelectionChanged="TextBox_SelectionChanged" AcceptsReturn="True" AcceptsTab="True">
+        <TextBox Name="TextBox" Grid.Row="1" Grid.RowSpan="1" Grid.ColumnSpan="2" Margin="10" TextChanged="TextBox_TextChanged" SelectionChanged="TextBox_SelectionChanged" AcceptsReturn="True" AcceptsTab="True">
             <TextBox.ContextMenu>
                 <ContextMenu>
                     <MenuItem Header="Zoom In" Click="TextBox_ZoomIn"></MenuItem>
@@ -63,15 +146,21 @@
             </TextBox.ContextMenu>
         </TextBox>
 
-        <StackPanel Grid.Column="0" Grid.Row="2" Height="20" Orientation="Horizontal" VerticalAlignment="Center" TextBlock.Foreground="White" HorizontalAlignment="Left">
-            <TextBlock Name="TextBlock_FileName" Margin="5,0,0,0">Untitled</TextBlock>
-        </StackPanel>
+        <Rectangle Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="2">
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF343434"/>
+                    <GradientStop Color="#FF4F4F4F" Offset="1"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
 
+        <StackPanel Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="2" Height="20" Orientation="Horizontal" HorizontalAlignment="Center" TextBlock.Foreground="White">
 
-        <StackPanel Grid.Column="1" Grid.Row="2" Height="20" Orientation="Horizontal" VerticalAlignment="Center" TextBlock.Foreground="White" HorizontalAlignment="Stretch">
+            <TextBlock Name="TextBlock_FileName" Margin="10,0,10,0">Untitled</TextBlock>
 
             <Border Width="1" Background="#373735"></Border>
-            
+
             <TextBlock Name="TextBlock_Line" Margin="10, 0, 0, 0">Line:</TextBlock>
             <TextBlock Name="TextBlock_LineNumber" Margin="5, 0, 10, 0">0</TextBlock>
             <Separator/>
@@ -80,12 +169,13 @@
 
             <Border Width="1" Background="#373735"></Border>
 
-            <TextBlock Name="TextBlock_Saved" Margin="10, 0, 0, 0" Foreground="Red">Unsaved</TextBlock>
-        </StackPanel>
+            <TextBlock Name="TextBlock_Saved" Margin="10, 0, 10, 0" Foreground="Red">Unsaved</TextBlock>
 
-        <StackPanel Grid.Column="1" Grid.Row="0" Margin="0,0,10,0" Orientation="Horizontal" HorizontalAlignment="Right" Width="140">
-            <TextBlock x:Name="ScaleText" TextAlignment="Center" Margin="0,10,0,0" Width="40" Foreground="White"/>
-            <Slider x:Name="ScaleSlider" Cursor="Hand" Width="100" Height="30" ToolTip="Change Scale of Text" Value="1.25" Foreground="White" Background="Gray"  ValueChanged="Slider_ValueChanged"/>
+            <Border Width="1" Background="#373735"></Border>
+
+            <TextBlock x:Name="ScaleText" TextAlignment="Center" Margin="5,0,5,5" Width="40" Foreground="White" Height="15"/>
+            <Slider x:Name="ScaleSlider" Cursor="Hand" Width="100" Height="15" ToolTip="Change Scale of Text" Value="1.2" ValueChanged="Slider_ValueChanged"/>
+
         </StackPanel>
 
     </Grid>

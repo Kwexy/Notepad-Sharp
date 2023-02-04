@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 namespace NotepadSharp.FileHandlers {
     public class FileManager {
 
+        public static string workingPath;
         public static string WorkingPath { get; set; }
 
         public static string[] ReadFile(string path) {

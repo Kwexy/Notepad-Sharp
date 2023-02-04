@@ -7,7 +7,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:NotepadSharp"
         mc:Ignorable="d"
-        Title="Notepad Sharp" Height="450" Width="800" WindowStyle="None" AllowsTransparency="True" Opacity="0.90">
+        Title="Notepad Sharp" Height="450" Width="800" WindowStyle="None" AllowsTransparency="True" Opacity="0.90" Icon="/Logo.png">
     
     
     <Window.Background>

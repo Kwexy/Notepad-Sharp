@@ -6,8 +6,11 @@ A sharp looking plain text editor written in C#.
 
 ### About Notepad Sharp
 
-Let's be honest.<br>
+Let's be honest.
+<br>
 Before Windows 11, Notepad wasn't the most visually appealing. It's bland, ___ and it doesn't have a dark mode.
+<br>
 So I decided to write a modern plain text editor for Windows.
+<br>
 Notepad although simple is very useful.
-I wanted to make something easy to use and appealing to all types of users.
+So I wanted to make something easy to use and appealing to all types of users.
